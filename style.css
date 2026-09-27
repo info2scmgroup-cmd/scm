@@ -1,0 +1,41 @@
+/* SCM Group Management Services — small hand-written CSS to complement Tailwind utility classes */
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Scroll reveal (progressive enhancement — content is visible by default, this just adds a fade/slide-in) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Client logo marquee (pure CSS, no JS library needed) */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+.marquee-track.marquee-reverse {
+  animation-direction: reverse;
+}
+.marquee-row:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
